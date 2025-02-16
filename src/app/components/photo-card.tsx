@@ -51,7 +51,7 @@ export default function PhotoCard({ photo }: PhotoCardProps) {
         onClose={toggleModal}
         maxWidth="lg"
         fullWidth
-      //  fullScreen={fullScreen}
+        fullScreen={fullScreen}
       >
         <IconButton
           onClick={toggleModal}
