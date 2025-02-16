@@ -49,9 +49,9 @@ export default function PhotoCard({ photo }: PhotoCardProps) {
       <Dialog
         open={open}
         onClose={toggleModal}
-        maxWidth="md"
+        maxWidth="lg"
         fullWidth
-        fullScreen={fullScreen}
+      //  fullScreen={fullScreen}
       >
         <IconButton
           onClick={toggleModal}
@@ -75,7 +75,7 @@ export default function PhotoCard({ photo }: PhotoCardProps) {
             overflow: "hidden",
           }}
         >
-          <Box sx={{ position: "relative", height: 300, width: 200 }}>
+          <Box sx={{ position: "relative", height: 500, width: 800 }}>
             <Image
               src={photo.urls.regular || "/placeholder.svg"}
               alt={photo.alt_description || "Unsplash photo"}
@@ -84,7 +84,16 @@ export default function PhotoCard({ photo }: PhotoCardProps) {
             />
           </Box>
         </Box>
-        <Box sx={{ p: 2, bgcolor: "background.paper" }}>
+        <Box
+          sx={{
+            p: 2,
+            bgcolor: "background.paper",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
           <Typography>{photo.user.name}</Typography>
           <Typography>
             {photo.description ||
