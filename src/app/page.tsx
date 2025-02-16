@@ -6,11 +6,10 @@ import SearchBar from "./components/search-bar";
 import PhotoGrid from "./components/photo-grid";
 import PhotoGridSkeleton from "./components/photo-grid-skeleton";
 
-
 export default function Home({
   searchParams,
 }: {
-  searchParams: { q?: string };
+  searchParams?: Record<string, string | undefined>;
 }) {
   return (
     <main>
@@ -34,7 +33,7 @@ export default function Home({
       </Box>
       <Container maxWidth="lg" sx={{ mt: { xs: 4, md: 6 } }}>
         <Suspense fallback={<PhotoGridSkeleton />}>
-          <PhotoGrid searchParams={searchParams} />
+          <PhotoGrid searchParams={searchParams || {}} />
         </Suspense>
       </Container>
     </main>
