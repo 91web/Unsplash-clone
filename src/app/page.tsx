@@ -1,8 +1,11 @@
+import { Suspense } from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import SearchBar from "./components/search-bar";
 import PhotoGrid from "./components/photo-grid";
+import PhotoGridSkeleton from "./components/photo-grid-skeleton";
+
 
 export default function Home({
   searchParams,
@@ -30,7 +33,9 @@ export default function Home({
         </Container>
       </Box>
       <Container maxWidth="lg" sx={{ mt: { xs: 4, md: 6 } }}>
-        <PhotoGrid searchParams={searchParams} />
+        <Suspense fallback={<PhotoGridSkeleton />}>
+          <PhotoGrid searchParams={searchParams} />
+        </Suspense>
       </Container>
     </main>
   );
