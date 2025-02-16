@@ -1,10 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import Dialog from "@mui/material/Dialog";
@@ -45,7 +42,7 @@ export default function PhotoCard({ photo }: PhotoCardProps) {
             objectFit="cover"
           />
           <Box className="overlay">
-            <Typography >{photo.user.name}</Typography>
+            <Typography>{photo.user.name}</Typography>
           </Box>
         </CardMedia>
       </Card>
@@ -68,20 +65,28 @@ export default function PhotoCard({ photo }: PhotoCardProps) {
         >
           <CloseIcon />
         </IconButton>
-        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", p:5, overflow: "hidden" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            p: 5,
+            overflow: "hidden",
+          }}
+        >
           <Box sx={{ position: "relative", height: 300, width: 200 }}>
             <Image
               src={photo.urls.regular || "/placeholder.svg"}
               alt={photo.alt_description || "Unsplash photo"}
               layout="fill"
-        objectFit="contain"
-       
+              objectFit="contain"
             />
           </Box>
         </Box>
         <Box sx={{ p: 2, bgcolor: "background.paper" }}>
-          <Typography >{photo.user.name}</Typography>
-          <Typography >
+          <Typography>{photo.user.name}</Typography>
+          <Typography>
             {photo.description ||
               photo.alt_description ||
               "No description available"}
