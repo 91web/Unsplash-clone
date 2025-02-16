@@ -1,4 +1,3 @@
-
 import { Suspense } from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
@@ -10,7 +9,7 @@ import PhotoGridSkeleton from "./components/photo-grid-skeleton";
 export default function Home({
   searchParams,
 }: {
-  searchParams?: Record<string, string | undefined>;
+  searchParams?: { q?: string };
 }) {
   return (
     <main>
