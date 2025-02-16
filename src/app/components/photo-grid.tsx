@@ -1,4 +1,4 @@
-"use client"; // Mark this as a Client Component
+"use client"; 
 import { useSearchParams } from "next/navigation";
 import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";

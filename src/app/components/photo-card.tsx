@@ -87,7 +87,7 @@ export default function PhotoCard({ photo }: PhotoCardProps) {
         <Box
           sx={{
             p: 2,
-            bgcolor: "background.paper",
+         //   bgcolor: "background.paper",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
